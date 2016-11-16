@@ -8,6 +8,7 @@ This is a vagrant setup I use to quickly spin up a Puppet Enterprise master with
 
 * Currently only works for the VMWare Fusion provider (PR wecome)
 * A Puppet Enterprise (EL7) tar.gz file placed in the same folder as Vagrantfile (tested with 2016.4)
+* Lots of ram and kick-ass fans.
 
 ### Usage
 
