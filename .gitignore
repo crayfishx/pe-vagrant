@@ -1,0 +1,5 @@
+puppet-enterprise-*.gz
+.vagrant
+hosts.shared
+*.swp
+*.swo
