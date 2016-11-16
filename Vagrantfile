@@ -10,19 +10,11 @@ if installers.empty?
   fail("No installer found, please place a Puppet Enterprise tgz file in the same directory as Vagrantfile")
 end
 
-installer = installers.first
+installer = installers.last
 
-# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
-#!/usr/bin/env bash
-
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  # All Vagrant configuration is done here. The most common configuration
-  # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
-
-  # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "puppetlabs/centos-7.0-64-nocm"
   config.vm.define 'puppet' do |master|
     master.vm.hostname = 'puppet.localdomain'
