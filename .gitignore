@@ -1,4 +1,5 @@
 puppet-enterprise-*.gz
+Gemfile.lock
 .vagrant
 hosts.shared
 *.swp
