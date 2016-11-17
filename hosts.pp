@@ -18,4 +18,3 @@ file { '/etc/hosts':
   target => '/vagrant/hosts.shared',
 }
 
-  

@@ -2,6 +2,7 @@
 # vi: set ft=ruby :
 #
 
+network = ENV['PUPPET_NETWORK_PREFIX'] || '192.168.10'
 agents = ENV['PUPPET_AGENTS'] || 3
 
 
@@ -18,6 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "puppetlabs/centos-7.0-64-nocm"
   config.vm.define 'puppet' do |master|
     master.vm.hostname = 'puppet.localdomain'
+    master.vm.network "private_network", ip: "#{network}.99"
     master.vm.provider :vmware_fusion do |v|
       v.memory = 4096
     end
@@ -37,6 +39,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   (1..agents.to_i).each do |sec|
     config.vm.define "agent#{sec}" do |agent|
       agent.vm.hostname = "agent#{sec}.localdomain"
+      agent.vm.network "private_network", ip: "#{network}.2#{sec}"
       agent.vm.provision "shell", inline: %Q{
         mkdir /root/pe
         tar -xv -C /root/pe --strip 1 -f /vagrant/#{installer}
