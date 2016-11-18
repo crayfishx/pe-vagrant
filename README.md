@@ -8,7 +8,8 @@ It's a little rough around the edges right now as it's something that's organica
 
 ### Requirements
 
-* Currently only works for the Virtualbox Fusion provider (PR wecome)
+* Vagrant (tested with 1.8.7)
+* Virtualbox (tested with 5.1.8)
 * A Puppet Enterprise (EL7) tar.gz file placed in the same folder as Vagrantfile (tested with 2016.4)
 * Lots of ram and kick-ass fans.
 
