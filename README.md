@@ -2,7 +2,7 @@
 
 ### What?
 
-This is a vagrant setup I use to quickly spin up a Puppet Enterprise master with connected agents.  It uses the vagrant-hosts plugin to sync hosts files across agents and the master
+This is a vagrant setup I use to quickly spin up a Puppet Enterprise master with connected agents.  It uses the vagrant-hosts plugin to sync hosts files across agents and the master.  The idea is to keep it as lightweight as possible
 
 It's a little rough around the edges right now as it's something that's organically grown over time and I've only ever used this in my own personal sand box environment, feel free to submit improvements!
 
