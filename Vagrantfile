@@ -13,7 +13,7 @@ end
 installer = installers.last
 network = ENV['PE_VAGRANT_NETWORK'] || '192.168.100'
 console_port = ENV['PE_VAGRANT_CONSOLE_PORT'] || '8443'
-orchestrator_port = ENV['PE_VAGRANT_ORCHESTRATOR_PORT'] || '8413'
+orchestrator_port = ENV['PE_VAGRANT_ORCHESTRATOR_PORT'] || '8143'
 rbac_port = ENV['PE_VAGRANT_RBAC_PORT'] || '4433'
 
 VAGRANTFILE_API_VERSION = "2"
@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     master.vm.network :private_network, ip: "#{network}.99"
     master.vm.network "forwarded_port", guest: 443, host: console_port
     master.vm.network "forwarded_port", guest: 4433, host: rbac_port
-    master.vm.network "forwarded_port", guest: 8413, host: orchestrator_port
+    master.vm.network "forwarded_port", guest: 8143, host: orchestrator_port
     master.vm.hostname = 'puppet.localdomain'
     master.vm.provider :virtualbox do |v|
       v.memory = 4096
