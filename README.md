@@ -4,6 +4,8 @@
 
 This is a vagrant setup I use to quickly spin up a Puppet Enterprise master with connected agents.  It uses the vagrant-hosts plugin to sync hosts files across agents and the master
 
+It's a little rough around the edges right now as it's something that's organically grown over time and I've only ever used this in my own personal sand box environment, feel free to submit improvements!
+
 ### Requirements
 
 * Currently only works for the Virtualbox Fusion provider (PR wecome)
@@ -27,6 +29,8 @@ For a PE master with three connected Puppet agents;
 vagrant up
 ```
 
+You can then access the PE console at `https://localhost:8443`.  The username is `admin` and the admin password (as defined in pe.conf) is `puppetlabs`
+
 To change the number of PE agents;
 
 ```
@@ -47,4 +51,10 @@ Unless overridden with the `PE_VAGRANT_CONSOLE_PORT`, `PE_VAGRANT_ORCHESTRATION_
 * The RBAC API (for generating tokens..etc) is available at `https://localhost:4433/rbac-api/v1/`
 * The orchestrator API is available at `https://localhost:8143/orchestrator/v1/`
 
+
+### Author
+
+Feel free to ping me with comments or questions
+
+Craig Dunn <craig@craigdunn.org>, @crayfishx
 

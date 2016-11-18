@@ -10,7 +10,12 @@ if installers.empty?
   fail("No installer found, please place a Puppet Enterprise tgz file in the same directory as Vagrantfile")
 end
 
+# If there is more than one installer in the directory we
+# use the latest one
 installer = installers.last
+
+
+# Set ports for exposing Puppet services to the host
 network = ENV['PE_VAGRANT_NETWORK'] || '192.168.100'
 console_port = ENV['PE_VAGRANT_CONSOLE_PORT'] || '8443'
 orchestrator_port = ENV['PE_VAGRANT_ORCHESTRATOR_PORT'] || '8143'
